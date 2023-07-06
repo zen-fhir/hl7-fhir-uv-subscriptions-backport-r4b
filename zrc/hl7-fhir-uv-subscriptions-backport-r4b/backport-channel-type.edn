@@ -1,0 +1,10 @@
+{ns hl7-fhir-uv-subscriptions-backport-r4b.backport-channel-type,
+ import #{zen.fhir hl7-fhir-r4b-core.Coding},
+ schema {:zen/tags #{zen.fhir/extension
+                     zen/schema
+                     zen.fhir/structure-schema},
+         :zen/desc "Extended channel type for notifications",
+         :zen.fhir/type "Coding",
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-channel-type",
+         :zen.fhir/version "0.6.29-4",
+         :confirms #{hl7-fhir-r4b-core.Coding/schema}}}

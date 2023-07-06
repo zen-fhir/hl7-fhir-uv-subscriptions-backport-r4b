@@ -1,0 +1,25 @@
+{ns hl7-fhir-uv-subscriptions-backport-r4b.search.Subscription-payload-type,
+ import #{zen.fhir},
+ search {:zen/tags #{zen.fhir/search},
+         :fhir/id "Subscription-payload-type",
+         :fhir/url "http://hl7.org/fhir/uv/subscriptions-backport/SearchParameter/Subscription-payload-type",
+         :fhir/type "string",
+         :name "payload-type",
+         :expr {:Subscription {:knife [["extension('http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content'"
+                                        "value"
+                                        "Code"]],
+                               :jsonpath ["$.\"extension('http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content'\".\"value\".\"Code\"[*]"],
+                               :data-types #{},
+                               :template :string,
+                               :sql {:where [:or
+                                             [:ilike
+                                              [:pg/cast
+                                               [:pg/jsonb-path-query-array
+                                                [:pg/sql
+                                                 "{{table}}.resource"]
+                                                [:pg/cast
+                                                 "($.\"extension('http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content'\".\"value\".\"Code\"[*]).** ? (@.type() == \"string\")"
+                                                 :jsonpath]]
+                                               :text]
+                                              [:pg/sql "{{param}}"]]],
+                                     :parameter-format "%\"?%"}}}}}

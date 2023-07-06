@@ -1,0 +1,50 @@
+{ns hl7-fhir-uv-subscriptions-backport-r4b.backport-subscription,
+ import #{hl7-fhir-r4b-core.Subscription
+          zen.fhir
+          hl7-fhir-uv-subscriptions-backport-r4b.backport-payload-content
+          hl7-fhir-uv-subscriptions-backport-r4b.backport-max-count
+          hl7-fhir-uv-subscriptions-backport-r4b.backport-filter-criteria
+          hl7-fhir-uv-subscriptions-backport-r4b.backport-timeout
+          hl7-fhir-uv-subscriptions-backport-r4b.backport-heartbeat-period
+          hl7-fhir-uv-subscriptions-backport-r4b.backport-channel-type},
+ schema {:zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen/desc "Profile on the Subscription resource to enable R5-style topic-based subscriptions in FHIR R4 or R4B.",
+         :zen.fhir/type "Subscription",
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription",
+         :zen.fhir/version "0.6.29-4",
+         :confirms #{hl7-fhir-r4b-core.Subscription/schema
+                     zen.fhir/Resource},
+         :type zen/map,
+         :keys {:criteria {:fhir/flags #{:MS},
+                           :zen/desc "Canonical URL for the topic used to generate events"},
+                :_criteria {:type zen/map,
+                            :keys {:filterCriteria {:type zen/vector,
+                                                    :every {:confirms #{hl7-fhir-uv-subscriptions-backport-r4b.backport-filter-criteria/schema},
+                                                            :fhir/extensionUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria",
+                                                            :fhir/flags #{:SU
+                                                                          :MS},
+                                                            :zen/desc "Filtering critiera applied to events"}}}},
+                :channel {:type zen/map,
+                          :keys {:heartbeatPeriod {:confirms #{hl7-fhir-uv-subscriptions-backport-r4b.backport-heartbeat-period/schema},
+                                                   :fhir/extensionUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-heartbeat-period",
+                                                   :zen/desc "Interval in seconds to send 'heartbeat' notification"},
+                                 :timeout {:confirms #{hl7-fhir-uv-subscriptions-backport-r4b.backport-timeout/schema},
+                                           :fhir/extensionUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-timeout",
+                                           :zen/desc "Timeout in seconds to attempt notification delivery"},
+                                 :maxCount {:confirms #{hl7-fhir-uv-subscriptions-backport-r4b.backport-max-count/schema},
+                                            :fhir/extensionUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-max-count",
+                                            :zen/desc "Maximum number of triggering resources included in notification bundles"},
+                                 :_type {:type zen/map,
+                                         :keys {:customChannelType {:confirms #{hl7-fhir-uv-subscriptions-backport-r4b.backport-channel-type/schema},
+                                                                    :fhir/extensionUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-channel-type",
+                                                                    :fhir/flags #{:SU
+                                                                                  :MS},
+                                                                    :zen/desc "Extended channel type for notifications"}}},
+                                 :_payload {:type zen/map,
+                                            :keys {:content {:confirms #{hl7-fhir-uv-subscriptions-backport-r4b.backport-payload-content/schema},
+                                                             :fhir/extensionUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content",
+                                                             :fhir/flags #{:SU
+                                                                           :MS},
+                                                             :zen/desc "Notification content level"}},
+                                            :require #{:content}}},
+                          :require #{:payload}}}}}

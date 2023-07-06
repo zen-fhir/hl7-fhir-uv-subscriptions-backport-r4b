@@ -1,0 +1,12 @@
+{ns hl7-fhir-uv-subscriptions-backport-r4b.search.Subscription-topic,
+ import #{zen.fhir},
+ search {:zen/tags #{zen.fhir/search},
+         :fhir/id "Subscription-topic",
+         :fhir/url "http://hl7.org/fhir/uv/subscriptions-backport/SearchParameter/Subscription-topic",
+         :fhir/type "uri",
+         :name "topic",
+         :expr {:Subscription {:knife [["criteria"]],
+                               :jsonpath ["$.\"criteria\"[*]"],
+                               :data-types #{{:type "string",
+                                              :polymorphic? false}},
+                               :template :uri}}}}

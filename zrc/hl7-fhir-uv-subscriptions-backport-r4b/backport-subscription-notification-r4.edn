@@ -1,0 +1,13 @@
+{ns hl7-fhir-uv-subscriptions-backport-r4b.backport-subscription-notification-r4,
+ import #{zen.fhir hl7-fhir-r4b-core.Bundle},
+ schema {:zen.fhir/version "0.6.29-4",
+         :confirms #{hl7-fhir-r4b-core.Bundle/schema
+                     zen.fhir/Resource},
+         :zen/tags #{zen.fhir/profile-schema zen/schema},
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4",
+         :require #{:entry},
+         :type zen/map,
+         :zen/desc "Profile on the R4 Bundle resource to enable R5-style topic-based subscription notifications in FHIR R4.",
+         :keys {:type {:match "history"},
+                :entry {:type zen/vector, :minItems 1}},
+         :zen.fhir/type "Bundle"}}

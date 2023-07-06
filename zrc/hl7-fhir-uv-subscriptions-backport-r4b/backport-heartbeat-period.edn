@@ -1,0 +1,10 @@
+{ns hl7-fhir-uv-subscriptions-backport-r4b.backport-heartbeat-period,
+ import #{zen.fhir hl7-fhir-r4b-core.unsignedInt},
+ schema {:zen/tags #{zen.fhir/extension
+                     zen/schema
+                     zen.fhir/structure-schema},
+         :zen/desc "Interval in seconds to send 'heartbeat' notification",
+         :zen.fhir/type "unsignedInt",
+         :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-heartbeat-period",
+         :zen.fhir/version "0.6.29-4",
+         :confirms #{hl7-fhir-r4b-core.unsignedInt/schema}}}
