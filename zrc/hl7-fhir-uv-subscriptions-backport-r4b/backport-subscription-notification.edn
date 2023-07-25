@@ -1,6 +1,6 @@
 {ns hl7-fhir-uv-subscriptions-backport-r4b.backport-subscription-notification,
  import #{zen.fhir hl7-fhir-r4b-core.Bundle},
- schema {:zen.fhir/version "0.6.30",
+ schema {:zen.fhir/version "0.6.30-1",
          :confirms #{hl7-fhir-r4b-core.Bundle/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
