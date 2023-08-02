@@ -6,5 +6,5 @@
          :zen/desc "Extension used to advertise supported SubscriptionTopic canonical URLs in a CapabilityStatement.",
          :zen.fhir/type "canonical",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical",
-         :zen.fhir/version "0.6.30-3",
+         :zen.fhir/version "0.6.30-7",
          :confirms #{hl7-fhir-r4b-core.canonical/schema}}}

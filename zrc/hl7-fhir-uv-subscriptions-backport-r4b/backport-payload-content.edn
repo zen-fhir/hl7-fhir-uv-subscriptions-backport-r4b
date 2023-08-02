@@ -6,5 +6,5 @@
          :zen/desc "Notification content level",
          :zen.fhir/type "code",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content",
-         :zen.fhir/version "0.6.30-3",
+         :zen.fhir/version "0.6.30-7",
          :confirms #{hl7-fhir-r4b-core.code/schema}}}
