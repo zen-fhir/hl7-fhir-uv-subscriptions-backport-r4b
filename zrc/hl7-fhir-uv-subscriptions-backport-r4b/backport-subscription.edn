@@ -11,7 +11,7 @@
          :zen/desc "Profile on the Subscription resource to enable R5-style topic-based subscriptions in FHIR R4 or R4B.",
          :zen.fhir/type "Subscription",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription",
-         :zen.fhir/version "0.6.30-13",
+         :zen.fhir/version "0.6.30-14",
          :confirms #{hl7-fhir-r4b-core.Subscription/schema
                      zen.fhir/Resource},
          :type zen/map,

@@ -6,5 +6,5 @@
          :zen/desc "Interval in seconds to send 'heartbeat' notification",
          :zen.fhir/type "unsignedInt",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-heartbeat-period",
-         :zen.fhir/version "0.6.30-13",
+         :zen.fhir/version "0.6.30-14",
          :confirms #{hl7-fhir-r4b-core.unsignedInt/schema}}}
