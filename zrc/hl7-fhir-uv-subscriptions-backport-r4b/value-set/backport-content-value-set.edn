@@ -2,7 +2,7 @@
  import #{zen.fhir},
  value-set {:zen/tags #{zen.fhir/value-set},
             :zen/desc "Codes to represent how much resource content to send in the notification payload.",
-            :zen.fhir/version "0.6.30-10",
+            :zen.fhir/version "0.6.30-11",
             :fhir/code-systems #{{:fhir/url "http://hl7.org/fhir/uv/subscriptions-backport/CodeSystem/backport-content-code-system",
                                   :zen.fhir/content :bundled}},
             :uri "http://hl7.org/fhir/uv/subscriptions-backport/ValueSet/backport-content-value-set",
