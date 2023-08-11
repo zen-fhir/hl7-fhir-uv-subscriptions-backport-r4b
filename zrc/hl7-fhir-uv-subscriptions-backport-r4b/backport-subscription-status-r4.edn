@@ -6,9 +6,9 @@
           hl7-fhir-r4b-core.Parameters
           hl7-fhir-r4b-core.value-set.subscription-notification-type},
  parameter-schema {:zen/tags #{zen/schema zen.fhir/structure-schema},
-                   :zen.fhir/version "0.6.30-12",
+                   :zen.fhir/version "0.6.30-13",
                    :zen/desc "Slices containing subscription status information"},
- schema {:zen.fhir/version "0.6.30-12",
+ schema {:zen.fhir/version "0.6.30-13",
          :confirms #{hl7-fhir-r4b-core.Parameters/schema
                      zen.fhir/Resource},
          :zen/tags #{zen.fhir/profile-schema zen/schema},
