@@ -6,5 +6,5 @@
          :zen/desc "Maximum number of triggering resources included in notification bundles",
          :zen.fhir/type "positiveInt",
          :zen.fhir/profileUri "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-max-count",
-         :zen.fhir/version "0.6.30-14",
+         :zen.fhir/version "0.6.31",
          :confirms #{hl7-fhir-r4b-core.positiveInt/schema}}}
